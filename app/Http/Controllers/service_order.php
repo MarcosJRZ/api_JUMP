@@ -112,7 +112,7 @@ class service_order extends Controller
             "entryDateTime" => "required|date_format:Y-m-d H:i:s",
             "exitDateTime" => "nullable|date_format:Y-m-d H:i:s",
             "priceType" => "nullable",
-            "price" => "nullable|decimal",
+            "price" => "nullable|decimal:2,2",
             "userId" => "required|integer",
         ];
 
