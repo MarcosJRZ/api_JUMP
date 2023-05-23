@@ -49,7 +49,7 @@ class user extends Controller
 
         $user = User_model::create($request->all());
 
-        return response()->json(["result" => !empty($user), "id" => $user->id]);
+        return response()->json(["result" => !empty($user), "id" => $user->id], 201);
     }
 
     /**

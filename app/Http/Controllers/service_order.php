@@ -49,7 +49,7 @@ class service_order extends Controller
 
         $service_order = Service_order_model::create($request->all());
 
-        return response()->json(["result" => !empty($service_order), "id" => $service_order->id]);
+        return response()->json(["result" => !empty($service_order), "id" => $service_order->id], 201);
     }
 
     /**
