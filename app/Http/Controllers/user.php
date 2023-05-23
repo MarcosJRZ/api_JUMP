@@ -30,6 +30,7 @@ class user extends Controller
             $usuarios->whereRaw('lower(name) like ?', "%" . mb_strtolower($request->search, 'UTF-8') . "%");
         }
 
+        $usuarios->orderBy(!empty($request->order) ? $request->order : 'id', !empty($request->sort) ? $request->sort : 'DESC');
         $usuarios->limit($request->limit);
 
         return response()->json([
