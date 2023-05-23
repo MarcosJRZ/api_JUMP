@@ -59,6 +59,10 @@ class user extends Controller
     {
         if (empty($id) || !is_numeric($id)) return response()->json(['result' => false, 'message' => 'Missing or invalid user id.'], 400);
 
+        $user = User_model::find($id);
+
+        if (empty($user)) return response()->json(['result' => false, 'message' => 'User not found.'], 404);
+
         return response()->json([
             'user' => User_model::find($id)
         ]);
